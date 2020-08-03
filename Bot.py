@@ -7,8 +7,8 @@ from vk_api.longpoll import VkLongPoll, VkEventType
 from vk_api.keyboard import VkKeyboard, VkKeyboardColor
 from exceptions import messages
 translator = Translator()
-token = os.environ.get('BOT_TOKEN')
-vk_session = vk_api.VkApi(token=token)
+tokens = os.environ.get('BOT_TOKEN')
+vk_session = vk_api.VkApi(token=str(tokens))
 random_id = vk_api.utils.get_random_id()
 longpoll = VkLongPoll(vk_session, group_id=197454537)
 vk = vk_session.get_api()
